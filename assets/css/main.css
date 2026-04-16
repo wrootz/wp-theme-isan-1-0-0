@@ -175,11 +175,11 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 /* Logo */
 .logo-wrap { display: flex; justify-content: center; align-items: center; }
 .logo-wrap svg,
-.logo-wrap img { height: 44px; width: auto; color: var(--primary); transition: color .3s; }
+.logo-wrap img { height: 60px; width: auto; color: var(--primary); transition: color .3s; }
 
 /* Custom logo WP */
 .custom-logo-link { display: flex; align-items: center; }
-.custom-logo      { height: 44px; width: auto; }
+.custom-logo      { height: 60px; width: auto; }
 
 /* Hamburger */
 .hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
@@ -651,6 +651,11 @@ body.elementor-editor-active .page-content { padding-top: 0; }
   .header__inner { grid-template-columns: 1fr auto; }
   .logo-wrap { grid-column: 1; justify-content: flex-start; }
   .hamburger { grid-column: 2; }
+
+  /* Logo menor no mobile */
+  .logo-wrap svg,
+  .logo-wrap img { height: 50px; }
+  .custom-logo { height: 50px; }
 
   .hero__title { font-size: 2.4rem; }
 

@@ -529,11 +529,14 @@ body.elementor-editor-active .page-content { padding-top: 0; }
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 3rem;
+  background: #2e0019;
 }
 .single-post__thumb img {
   width: 100%;
   height: auto;
   display: block;
+      filter: brightness(105%) opacity(100%) contrast(105%) saturate(85%) grayscale(25%) sepia(20%);
+      mix-blend-mode: screen;
 }
 .single-post__nav {
   margin-top: 4rem;

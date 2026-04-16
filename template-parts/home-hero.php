@@ -13,7 +13,7 @@ $img = get_template_directory_uri() . '/assets/img/';
     </h1>
     <div class="hero__actions">
       <a href="https://isanessencias.com/sobre-nos/" class="btn-pill"><?php esc_html_e( 'Saiba mais', 'isan-essencias' ); ?></a>
-      <a href="https://wa.me/5511992486368?text=Ol%C3%A1!%20Estava%20no%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="btn-pill btn-pill--ghost" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Entre em contato', 'isan-essencias' ); ?></a>
+      <a href="https://wa.me/5511992486368?text=Ol%C3%A1!%20Estava%20no%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="btn-pill btn-pill--ghost" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Falar via WhatsApp', 'isan-essencias' ); ?></a>
     </div>
   </div>
 </section>

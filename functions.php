@@ -329,3 +329,26 @@ function isan_logo_svg() {
         <path d="M26.7 70.3a16 16 0 1 0 0-32.2 16 16 0 0 0 0 32.2" fill="currentColor"/>
     </svg>';
 }
+
+
+/* ─── 8. CF7 CONTACT FORM: CNPJ REGEX VALIDATION ────────────────────────────────── */
+
+add_filter('wpcf7_validate_number*', 'custom_cnpj_validation', 20, 2);
+add_filter('wpcf7_validate_number', 'custom_cnpj_validation', 20, 2);
+
+function custom_cnpj_validation($result, $tag) {
+    $name = $tag->name;
+
+    if ($name == 'cnpj') {
+        $value = isset($_POST[$name]) ? trim($_POST[$name]) : '';
+        
+        // Expressão Regular para: 00.000.000/0001-00 ou 00000000000000
+        $regex = '/^(\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}|\d{14})$/';
+
+        if ($value != "" && !preg_match($regex, $value)) {
+            $result->invalidate($tag, "Formato de CNPJ inválido.");
+        }
+    }
+
+    return $result;
+}

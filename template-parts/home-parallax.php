@@ -9,6 +9,8 @@ $lines = [
     __( 'Personal Care', 'isan-essencias' ),
     __( 'House Hold',    'isan-essencias' ),
     __( 'Linha Pet',     'isan-essencias' ),
+    __( 'Home Care',     'isan-essencias' ),
+    __( 'Marketing Olfativo',     'isan-essencias' ),
 ];
 ?>
 <section class="parallax-section" id="sobre" aria-label="<?php esc_attr_e( 'Categorias de produtos', 'isan-essencias' ); ?>">

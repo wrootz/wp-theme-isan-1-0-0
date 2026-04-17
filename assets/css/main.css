@@ -34,7 +34,7 @@ html {
   --sans:       'Helvetica Neue', Helvetica, Arial, sans-serif;
   --filter-padrao:
                 brightness(105%)
-                opacity(190%)
+                opacity(90%)
                 contrast(105%)
                 saturate(85%)
                 grayscale(25%)
@@ -557,7 +557,7 @@ p:has(img) {
 }
 img.alignnone.size-full {
     filter: var(--filter-padrao);
-    /* mix-blend-mode: var(--mix-blend-mode-padrao); */
+    mix-blend-mode: var(--mix-blend-mode-padrao);
 }
 .single-post__nav {
   margin-top: 4rem;
@@ -576,6 +576,11 @@ img.alignnone.size-full {
   min-height: 58vh;
   margin-top: var(--nav-h);   /* compensa o header fixo */
   overflow: hidden;
+      background: var(--primary);
+}
+video.page-hero__video {
+    mix-blend-mode: var(--mix-blend-mode);
+    filter: opacity(0.75);
 }
 .page-hero__bg {
   position: absolute;

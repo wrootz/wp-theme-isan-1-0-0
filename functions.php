@@ -333,22 +333,38 @@ function isan_logo_svg() {
 
 /* ─── 8. CF7 CONTACT FORM: CNPJ REGEX VALIDATION ────────────────────────────────── */
 
-add_filter('wpcf7_validate_number*', 'custom_cnpj_validation', 20, 2);
-add_filter('wpcf7_validate_number', 'custom_cnpj_validation', 20, 2);
+// Validação de CNPJ para Contact Form 7
+add_filter('wpcf7_validate_text*', 'custom_cnpj_validation', 20, 2);
+add_filter('wpcf7_validate_text', 'custom_cnpj_validation', 20, 2);
 
 function custom_cnpj_validation($result, $tag) {
-    $name = $tag->name;
+    if ($tag->name == 'cnpj') {
+        $cnpj = isset($_POST['cnpj']) ? $_POST['cnpj'] : '';
+        $cnpj = preg_replace('/[^0-9]/', '', $cnpj); // Remove pontuação
 
-    if ($name == 'cnpj') {
-        $value = isset($_POST[$name]) ? trim($_POST[$name]) : '';
-        
-        // Expressão Regular para: 00.000.000/0001-00 ou 00000000000000
-        $regex = '/^(\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}|\d{14})$/';
-
-        if ($value != "" && !preg_match($regex, $value)) {
-            $result->invalidate($tag, "Formato de CNPJ inválido.");
+        if (!valida_cnpj($cnpj)) {
+            $result->invalidate($tag, "CNPJ inválido. Por favor, verifique os números.");
         }
     }
-
     return $result;
+}
+
+// Função lógica para cálculo de CNPJ
+function valida_cnpj($cnpj) {
+    if (strlen($cnpj) != 14) return false;
+    if (preg_match('/(\d)\1{13}/', $cnpj)) return false; // Elimina sequências repetidas como 000...
+
+    for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++) {
+        $soma += $cnpj[$i] * $j;
+        $j = ($j == 2) ? 9 : $j - 1;
+    }
+    $resto = $soma % 11;
+    if ($cnpj[12] != ($resto < 2 ? 0 : 11 - $resto)) return false;
+
+    for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++) {
+        $soma += $cnpj[$i] * $j;
+        $j = ($j == 2) ? 9 : $j - 1;
+    }
+    $resto = $soma % 11;
+    return $cnpj[13] == ($resto < 2 ? 0 : 11 - $resto);
 }

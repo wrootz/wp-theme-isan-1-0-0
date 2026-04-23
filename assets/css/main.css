@@ -265,7 +265,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 .hero__title {
   font-family: var(--serif);
-  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-size: clamp(2.6rem, 3vw, 5rem);
   font-weight: 400;
   color: var(--primary);
   line-height: 1.15;
@@ -314,7 +314,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 .slider-panel__title {
   font-family: var(--serif);
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(2rem, 2.25vw, 3rem);
   font-weight: 400; color: var(--text);
   line-height: 1.2; letter-spacing: -.02em; margin-bottom: 1.5rem;
 }
@@ -354,10 +354,14 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .reveal-line {
   display: block;
   font-family: var(--serif);
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  font-weight: 300; color: var(--white);
-  line-height: 1.25; letter-spacing: -.01em;
-  opacity: 0; transform: translateY(48px);
+  font-size: clamp(1.25rem, 1.7vw, 2.0rem);
+  font-weight: 300;
+  color: var(--white);
+  /* line-height: 1.25; */
+  line-height: 2;
+  letter-spacing: -.01em;
+  opacity: 0; 
+  transform: translateY(48px);
   transition: opacity .7s ease, transform .7s ease;
 }
 .reveal-line.visible { opacity: 1; transform: translateY(0); }
@@ -587,6 +591,8 @@ video.page-hero__video {
   inset: 0;
   background-size: cover;
   background-position: center 40%;
+      filter: var(--filter-padrao);
+      mix-blend-mode: var(--mix-blend-mode-padrao);
 }
 .page-hero__overlay {
   position: absolute;
@@ -638,7 +644,8 @@ video.page-hero__video {
 .entry-content h3 {
   font-family: var(--serif);
   font-size: clamp(1.15rem, 2vw, 1.5rem);
-  font-weight: 400; color: var(--text);
+  font-weight: 400; 
+  color: var(--primary);
   line-height: 1.25; margin-top: 2.5rem;
 }
 .entry-content h4 {

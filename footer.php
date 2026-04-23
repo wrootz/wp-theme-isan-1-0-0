@@ -74,8 +74,26 @@
       </a>
     </div>
 
-
   </div>
+
+  <script>
+    // document.addEventListener('wpcf7messenger', function(event) {
+    //     // Opcional: lógica após envio
+    // }, false);
+
+    jQuery(document).ready(function($) {
+        $('.cnpj-mask').on('input', function() {
+            var cnpj = $(this).val().replace(/\D/g, ''); // Remove tudo que não é número
+            
+            cnpj = cnpj.replace(/^(\d{2})(\d)/, "$1.$2");
+            cnpj = cnpj.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+            cnpj = cnpj.replace(/\.(\d{3})(\d)/, ".$1/$2");
+            cnpj = cnpj.replace(/(\d{4})(\d)/, "$1-$2");
+            
+            $(this).val(cnpj.substring(0, 18)); // Limita o tamanho final
+        });
+    });
+  </script>
 
 </footer>
 

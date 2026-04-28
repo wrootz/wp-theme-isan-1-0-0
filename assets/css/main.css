@@ -3,7 +3,7 @@ html {
 }
 
 /* ─── KAFTAN WEB FONT ──────────────────────────────────── */
-@font-face {
+/* @font-face {
   font-family: 'Kaftan';
   src: url('../fonts/kaftan/6f015c37e61211d79a8d711c425993c6.eot');
   src: url('../fonts/kaftan/6f015c37e61211d79a8d711c425993c6.eot?#iefix') format('embedded-opentype'),
@@ -14,7 +14,10 @@ html {
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} */
+
+/* ─── PT SERIF CAPTION (TESTE — cliente avaliando) ────── */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif+Caption&display=swap');
 
 /* ─── RESET & TOKENS ───────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,7 +33,8 @@ html {
   --white:      #ffffff;
   --nav-h:      72px;
   --max:        1200px;
-  --serif:      'Kaftan', Georgia, serif;
+  /* --serif:   'Kaftan', Georgia, serif; */   /* ← fonte original */
+  --serif:      'PT Serif Caption', Georgia, serif;
   --sans:       'Helvetica Neue', Helvetica, Arial, sans-serif;
   --filter-padrao:
                 brightness(105%)

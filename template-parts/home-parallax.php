@@ -4,13 +4,15 @@
  */
 $img = get_template_directory_uri() . '/assets/img/';
 
+$base = trailingslashit( site_url( '/nossos-segmentos/' ) );
+
 $lines = [
-    __( 'Fragrances',    'isan-essencias' ),
-    __( 'Personal Care', 'isan-essencias' ),
-    __( 'House Hold',    'isan-essencias' ),
-    __( 'Linha Pet',     'isan-essencias' ),
-    __( 'Home Care',     'isan-essencias' ),
-    __( 'Marketing Olfativo',     'isan-essencias' ),
+    __( 'Fragrances',         'isan-essencias' ) => $base . '#FineFragrances',
+    __( 'Personal Care',      'isan-essencias' ) => $base . '#PersonalCare',
+    __( 'House Hold',         'isan-essencias' ) => $base . '#HomeCare',
+    __( 'Linha Pet',          'isan-essencias' ) => $base . '#PetCare',
+    __( 'Home Care',          'isan-essencias' ) => $base . '#HomeCare',
+    __( 'Marketing Olfativo', 'isan-essencias' ) => $base . '#MarketingOlfativo',
 ];
 ?>
 <section class="parallax-section" id="sobre" aria-label="<?php esc_attr_e( 'Categorias de produtos', 'isan-essencias' ); ?>">
@@ -31,8 +33,12 @@ $lines = [
   <div class="parallax-overlay"></div>
 
   <div class="parallax-content" id="reveal-wrap">
-    <?php foreach ( $lines as $line ) : ?>
-      <a href="https://isanessencias.com/nossos-segmentos/" class="reveal-line" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $line ); ?></a>
+    <?php foreach ( $lines as $label => $url ) : ?>
+
+      <a href="<?php echo esc_url( $url ); ?>" class="reveal-line">
+        <?php echo esc_html( $label ); ?>
+      </a>
+      
     <?php endforeach; ?>
   </div>
 

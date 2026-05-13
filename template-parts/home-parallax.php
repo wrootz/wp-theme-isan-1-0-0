@@ -19,7 +19,7 @@ $lines = [
 
   <div class="parallax-bg" id="parallax-bg">
     <picture>
-      <source srcset="<?php echo esc_url( $img . 'imgi_73_home-fragrancias-slide-02.avif' ); ?>" type="image/avif">
+      <source srcset="<?php echo esc_url( $img . 'imgi_74_home-slide-categorias.jpeg' ); ?>" type="image/jpeg">
       <img
         src="<?php echo esc_url( $img . 'imgi_52_home-slider-2.webp' ); ?>"
         alt=""

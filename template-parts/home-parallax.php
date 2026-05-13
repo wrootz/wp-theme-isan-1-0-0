@@ -7,7 +7,7 @@ $img = get_template_directory_uri() . '/assets/img/';
 $base = trailingslashit( site_url( '/nossos-segmentos/' ) );
 
 $lines = [
-    __( 'Fragrances',         'isan-essencias' ) => $base . '#FineFragrances',
+    __( 'Fine Fragrances',    'isan-essencias' ) => $base . '#FineFragrances',
     __( 'Personal Care',      'isan-essencias' ) => $base . '#PersonalCare',
     __( 'House Hold',         'isan-essencias' ) => $base . '#HomeCare',
     __( 'Linha Pet',          'isan-essencias' ) => $base . '#PetCare',
